@@ -41,7 +41,7 @@ public extension ObservableType where E == String {
                 let json = JSON(data: dataFromString)
                 return Observable.just(json);
             } else {
-                throw ZJObjectError(domain:"SwiftyJSON",code:100,message:"JSON转换错误");
+                throw ZJSwiftyJSONError(domain:"SwiftyJSON",code:100,message:"JSON转换错误");
             }  
         }
     }
@@ -53,11 +53,11 @@ public extension ObservableType where E == String {
                 let json = JSON(data: dataFromString)
                 
                 guard let mappedObject = T(jsonData: json) else {
-                    throw ZJObjectError(domain:"SwiftyJSON",code:101,message:"对象转换错误");
+                    throw ZJSwiftyJSONError(domain:"SwiftyJSON",code:101,message:"对象转换错误");
                 }
                 return Observable.just(mappedObject);
             } else {
-                throw ZJObjectError(domain:"SwiftyJSON",code:100,message:"JSON转换错误");
+                throw ZJSwiftyJSONError(domain:"SwiftyJSON",code:100,message:"JSON转换错误");
             }
         }
     }
@@ -70,7 +70,7 @@ public extension ObservableType where E == String {
                 let mappedObjectsArray = json.arrayValue.flatMap { T(jsonData: $0) }
                 return Observable.just(mappedObjectsArray);
             } else {
-                throw ZJObjectError(domain:"SwiftyJSON",code:100,message:"JSON转换错误");
+                throw ZJSwiftyJSONError(domain:"SwiftyJSON",code:100,message:"JSON转换错误");
             }
         }
     }

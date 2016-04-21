@@ -21,5 +21,4 @@ Pod::Spec.new do |s|
     ss.dependency "SwiftyJSON", "~> 2.3.2"
     ss.framework  = "Foundation"
   end
-
 end
