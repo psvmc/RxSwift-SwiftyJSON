@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.default_subspec = "Core"
 
   s.subspec "Core" do |ss|
-    ss.source_files  = "Source/*.swift"
+    ss.source_files  = "Source/RxSwift-SwiftyJSON/*.swift"
     ss.dependency "RxSwift", "~> 2.4"
     ss.dependency "SwiftyJSON", "~> 2.3.2"
     ss.framework  = "Foundation"
