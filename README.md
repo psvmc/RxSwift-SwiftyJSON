@@ -67,13 +67,11 @@ import SwiftyJSON
 
 class ZJUser_S: ZJSwiftyJSONAble {
     var userName: String!
-    var userPhone: String!
     var userAlias: String!
     var invitationCode: Int!
     
     required init?(jsonData:JSON){
         self.userName = jsonData["userName"].stringValue
-        self.userPhone = jsonData["userPhone"].stringValue
         self.userAlias = jsonData["userAlias"].stringValue
         self.invitationCode = jsonData["userAlias"].intValue
     }
