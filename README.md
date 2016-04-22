@@ -132,6 +132,14 @@ _ = string(.POST, "http://t.yidaisong.com:90/login!in.do",
     })
 ```
 
+### 示例(Demo)
+
+使用方法可以参考下面的示例
+
+Method of use can refer to the following example
+
+[RxAlamofireDemo_Swift](https://github.com/psvmc/RxAlamofireDemo_Swift)
+
 
 ## 作者(Author)
 
