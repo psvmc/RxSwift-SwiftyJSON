@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxSwift-SwiftyJSON"
-  s.version      = "1.0"
+  s.version      = "1.0.1"
   s.summary      = "SwiftyJSON bindings for RxSwift"
   s.description  = <<-EOS
   Easy to use SwiftyJSON in RxSwift

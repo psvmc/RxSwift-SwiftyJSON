@@ -11,7 +11,7 @@
 RxSwift-SwiftyJSON is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
 ```
-pod 'RxSwift-SwiftyJSON', '~> 1.0'
+pod 'RxSwift-SwiftyJSON', '~> 1.0.1'
 ```
 
 然后运行`pod install`
