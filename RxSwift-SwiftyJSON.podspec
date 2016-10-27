@@ -23,5 +23,8 @@ Pod::Spec.new do |s|
     ss.dependency "RxSwift", "~> 3.0"
     ss.dependency "SwiftyJSON", "~> 3.1"
     ss.framework  = "Foundation"
+    ss.pod_target_xcconfig =  {
+        'SWIFT_VERSION' => '3.0',
+    }
   end
 end
