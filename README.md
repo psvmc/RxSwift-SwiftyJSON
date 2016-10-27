@@ -11,7 +11,7 @@
 RxSwift-SwiftyJSON is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
 ```
-pod 'RxSwift-SwiftyJSON', '~> 1.0.1'
+pod 'RxSwift-SwiftyJSON', '~> 1.1'
 ```
 
 然后运行`pod install`
@@ -31,11 +31,7 @@ if you get the json like this:
 {
     "success":"true",
     "msg":"获取用户信息成功",
-    "obj":{
-        "userName":"张剑",
-        "userAlias":"剑行者",
-        "invitationCode":100
-    }
+    "obj":[]
 }
 ```
 
@@ -50,12 +46,13 @@ import SwiftyJSON
 class ZJResult_S<T: ZJSwiftyJSONAble>: ZJSwiftyJSONAble {
     var success: String!
     var msg: String!
-    var obj: T?
+    var obj: [T]?
+    
     
     required init?(jsonData:JSON){
         self.success = jsonData["success"].stringValue
         self.msg = jsonData["msg"].stringValue
-        self.obj = T(jsonData: jsonData["obj"])
+        self.obj = jsonData["obj"].arrayValue.flatMap { T(jsonData: $0) }
     }
 }
 ```
@@ -65,15 +62,22 @@ class ZJResult_S<T: ZJSwiftyJSONAble>: ZJSwiftyJSONAble {
 import Foundation
 import SwiftyJSON
 
-class ZJUser_S: ZJSwiftyJSONAble {
-    var userName: String!
-    var userAlias: String!
-    var invitationCode: Int!
+class ZJArticle_S: ZJSwiftyJSONAble {
+    var title: String!
+    var keywords: String!
+    var description: String!
+    var date: String!
+    var path: String!
+    var url: String!
+    
     
     required init?(jsonData:JSON){
-        self.userName = jsonData["userName"].stringValue
-        self.userAlias = jsonData["userAlias"].stringValue
-        self.invitationCode = jsonData["userAlias"].intValue
+        self.title = jsonData["title"].stringValue
+        self.keywords = jsonData["keywords"].stringValue
+        self.description = jsonData["description"].stringValue
+        self.date = jsonData["date"].stringValue
+        self.path = jsonData["path"].stringValue
+        self.url = jsonData["url"].stringValue
     }
 }
 ```
@@ -130,13 +134,6 @@ _ = string(.POST, "http://t.yidaisong.com:90/login!in.do",
     })
 ```
 
-### 示例(Demo)
-
-使用方法可以参考下面的示例
-
-Method of use can refer to the following example
-
-[RxAlamofireDemo_Swift](https://github.com/psvmc/RxAlamofireDemo_Swift)
 
 
 ## 作者(Author)
