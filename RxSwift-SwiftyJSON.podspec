@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxSwift-SwiftyJSON"
-  s.version      = "1.0.1"
+  s.version      = "1.1"
   s.summary      = "SwiftyJSON bindings for RxSwift"
   s.description  = <<-EOS
   Easy to use SwiftyJSON in RxSwift
@@ -13,12 +13,15 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
   s.source       = { :git => "https://github.com/psvmc/RxSwift-SwiftyJSON.git", :tag => s.version }
+  s.pod_target_xcconfig =  {
+        'SWIFT_VERSION' => '3.0',
+  }
   s.default_subspec = "Core"
 
   s.subspec "Core" do |ss|
-    ss.source_files  = "Source/RxSwift-SwiftyJSON/*.swift"
-    ss.dependency "RxSwift", "~> 2.4"
-    ss.dependency "SwiftyJSON", "~> 2.3.2"
+    ss.source_files  = "RxAlamofireDemo_Swift/Lib/Lib-Swift/RxSwift-SwiftyJSON/*.swift"
+    ss.dependency "RxSwift", "~> 3.0"
+    ss.dependency "SwiftyJSON", "~> 3.1"
     ss.framework  = "Foundation"
   end
 end

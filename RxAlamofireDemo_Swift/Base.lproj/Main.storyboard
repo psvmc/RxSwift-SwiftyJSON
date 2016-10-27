@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RxAlamofireDemo_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wky-hy-Jos">
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="暂无数据" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OKE-7w-gN0">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtW-yn-xeO" userLabel="获取数据(SwiftyJSON-Object)">
+                                        <color key="backgroundColor" red="1" green="0.60236443198774969" blue="0.55915597544144391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6Xt-vG-S9k"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="原始结果数据">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="queryData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9uK-9K-c6d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5V-Jn-aBn" userLabel="获取数据(SwiftyJSON-Object)">
+                                        <color key="backgroundColor" red="0.19250629150000001" green="0.58718936470000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="uf4-pV-2Gr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="用SwiftyJSON把结果转为对象">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="queryDataSwiftyObject:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9B4-zV-xUh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ml-oH-nHh">
+                                        <color key="backgroundColor" red="1" green="0.33173313059999998" blue="0.32155616349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bxH-04-iRk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="用SwiftyJSON把结果转为JSON">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="queryDataSwiftyJsonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CmK-Bv-2IK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wtW-yn-xeO" secondAttribute="trailing" constant="10" id="7gc-03-YQE"/>
+                                    <constraint firstAttribute="trailing" secondItem="p5V-Jn-aBn" secondAttribute="trailing" constant="10" id="8JW-tB-pnj"/>
+                                    <constraint firstItem="4Ml-oH-nHh" firstAttribute="leading" secondItem="Wky-hy-Jos" secondAttribute="leading" constant="10" id="DQ6-9n-czy"/>
+                                    <constraint firstItem="4Ml-oH-nHh" firstAttribute="top" secondItem="p5V-Jn-aBn" secondAttribute="bottom" constant="10" id="Ekk-Zw-TdV"/>
+                                    <constraint firstAttribute="trailing" secondItem="OKE-7w-gN0" secondAttribute="trailing" constant="10" id="H5h-KV-IJp"/>
+                                    <constraint firstItem="wtW-yn-xeO" firstAttribute="leading" secondItem="Wky-hy-Jos" secondAttribute="leading" constant="10" id="Is8-tB-H5F"/>
+                                    <constraint firstItem="p5V-Jn-aBn" firstAttribute="leading" secondItem="Wky-hy-Jos" secondAttribute="leading" constant="10" id="NEd-SI-9i0"/>
+                                    <constraint firstItem="p5V-Jn-aBn" firstAttribute="top" secondItem="OKE-7w-gN0" secondAttribute="bottom" constant="10" id="Pcz-TN-Wqm"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Ml-oH-nHh" secondAttribute="bottom" constant="10" id="W2B-DL-pHu"/>
+                                    <constraint firstItem="p5V-Jn-aBn" firstAttribute="top" secondItem="wtW-yn-xeO" secondAttribute="bottom" constant="10" id="XPQ-LH-grS"/>
+                                    <constraint firstItem="OKE-7w-gN0" firstAttribute="top" secondItem="Wky-hy-Jos" secondAttribute="top" constant="20" id="Y4m-rB-diI"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Ml-oH-nHh" secondAttribute="trailing" constant="10" id="u0k-V4-EX1"/>
+                                    <constraint firstItem="OKE-7w-gN0" firstAttribute="leading" secondItem="Wky-hy-Jos" secondAttribute="leading" constant="10" id="yhr-Wc-Srl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wky-hy-Jos" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8wm-pg-3Nw"/>
+                            <constraint firstItem="Wky-hy-Jos" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Nff-rw-UbS"/>
+                            <constraint firstItem="Wky-hy-Jos" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="dPh-Rs-sL6"/>
+                            <constraint firstItem="Wky-hy-Jos" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eQl-Dx-OKj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showTextView" destination="OKE-7w-gN0" id="YqQ-Yy-KQ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="374"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

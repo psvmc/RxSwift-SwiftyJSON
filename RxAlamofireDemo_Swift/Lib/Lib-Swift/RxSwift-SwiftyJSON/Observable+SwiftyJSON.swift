@@ -13,7 +13,7 @@ import SwiftyJSON
 /**
  *  JSON转换错误
  */
-struct ZJSwiftyJSONError : ErrorType {
+struct ZJSwiftyJSONError : Error {
     let domain: String
     let code: Int
     let message: String
@@ -37,7 +37,7 @@ public extension ObservableType where E == String {
     
     public func mapSwiftyJSON() -> Observable<JSON> {
         return flatMap { response -> Observable<JSON> in
-            if let dataFromString = response.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+            if let dataFromString = response.data(using: String.Encoding.utf8, allowLossyConversion: false) {
                 let json = JSON(data: dataFromString)
                 return Observable.just(json);
             } else {
@@ -49,7 +49,7 @@ public extension ObservableType where E == String {
     
     public func mapSwiftyObject<T: ZJSwiftyJSONAble>(type: T.Type) -> Observable<T> {
         return flatMap { response -> Observable<T> in
-            if let dataFromString = response.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+            if let dataFromString = response.data(using: String.Encoding.utf8, allowLossyConversion: false) {
                 let json = JSON(data: dataFromString)
                 
                 guard let mappedObject = T(jsonData: json) else {
@@ -65,7 +65,7 @@ public extension ObservableType where E == String {
 
     public func mapSwiftyArray<T: ZJSwiftyJSONAble>(type: T.Type) -> Observable<[T]> {
         return flatMap { response -> Observable<[T]> in
-            if let dataFromString = response.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+            if let dataFromString = response.data(using: String.Encoding.utf8, allowLossyConversion: false) {
                 let json = JSON(data: dataFromString)
                 let mappedObjectsArray = json.arrayValue.flatMap { T(jsonData: $0) }
                 return Observable.just(mappedObjectsArray);
